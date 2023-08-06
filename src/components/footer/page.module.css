@@ -1,0 +1,9 @@
+.container{
+    height: 50px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.soc{display: flex; gap: 5px;}
+.soc > *{ cursor: pointer;}
