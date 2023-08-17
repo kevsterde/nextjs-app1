@@ -1,9 +1,11 @@
 .container{
 }
-.blogItem{margin-bottom: 30px; display: flex; gap: 30px; align-items: center; color: #fff;}
+.blogItem{margin-bottom: 30px; display: flex; gap: 30px; align-items: center; }
 .blogItem:hover h1{color: #53c29b; text-decoration: underline;}
 .blogItem h1{ font-size: 40px;}
 .blogItem p{font-size: 16px;}
 
-.imgContainer{width: 300px; aspect-ratio: 1; position: relative;}
+.imgContainer{width: 300px; aspect-ratio: 1; position: relative; max-width: 30% ; flex: 1;}
 .imgContainer img{object-fit: cover;}
+
+.content{flex: 1    ;}

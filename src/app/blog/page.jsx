@@ -3,28 +3,44 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Blog() {
+async function getData() {
+  const res = await fetch('http://localhost:3000/api/posts',{
+    cache: 'no-store'
+  });
+ 
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+ 
+
+
+
+
+const Blog = async () => {
+  const data = await getData();
+
+
   return (
     <div className={styles.container}>
-      <Link href="/blog/1" className={styles.blogItem}>
-        <div className={styles.imgContainer}>
-          <Image src="https://img.freepik.com/free-vector/octopus-background-pirate-boat_23-2147634059.jpg" fill={true} alt=""/>
-        </div>
-        <div className={styles.content}>
-          <h1>Digital Storreis</h1>
-          <h2>Handiract Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, itaque.</h2>
-        </div>
-      </Link>
-      <Link href="" className={styles.blogItem}>
-        <div className={styles.imgContainer}>
-          <Image src="https://img.freepik.com/free-vector/octopus-background-pirate-boat_23-2147634059.jpg" fill={true} alt=""/>
-        </div>
-        <div className={styles.content}>
-          <h1>Digital Storreis</h1>
-          <h2>Handiract Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, itaque.</h2>
-        </div>
-      </Link>
 
+    {data.map(item=>(
+     <Link key={item._id} href={"/blog/"+item._id} className={styles.blogItem}>
+     <div className={styles.imgContainer}>
+       <Image src={item.img} fill={true} alt=""/>
+     </div>
+     <div className={styles.content}>
+       <h1>{item.title}</h1>
+       <h2>{item.desc}</h2>
+     </div>
+   </Link>
+
+    ))}
+
+ 
+  
 
 
     </div>

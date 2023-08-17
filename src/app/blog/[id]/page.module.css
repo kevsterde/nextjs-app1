@@ -1,7 +1,7 @@
 .container{ }
 .link:hover{color: #53c29b; text-decoration: underline;}
 
-.topContainer{margin-bottom: 30px; display: flex; gap: 30px; align-items: center; color: #fff;}
+.topContainer{margin-bottom: 30px; display: flex; gap: 30px; align-items: center; color: #fff; justify-content: space-between;}
 .topContainer h1{ font-size: 40px;}
 .topContainer p{font-size: 16px;}
 .content{display: flex; flex-direction: column; gap: 30px;}
