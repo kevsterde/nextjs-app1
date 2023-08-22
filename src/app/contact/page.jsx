@@ -11,13 +11,14 @@ export const metadata = {
 function Contact() {
   return (
     <div className={styles.container} >
-      <h1>Let's Keep in Touch</h1>
+      <h1>Let&apos;s Keep in Touch</h1>
       <div className={styles.content}>
         <div className={styles.imgCotainer}>
         <Image
         src="/contact.png"
         fill={true}
         className={styles.image}
+        alt="asd"
         />
         </div>
         <form action="" className={styles.form}>
