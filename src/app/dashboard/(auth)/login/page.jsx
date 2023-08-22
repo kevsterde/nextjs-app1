@@ -20,6 +20,9 @@ if(session.status === "loading")
  return <p>Loading...</p>
 }
 
+const register = () =>{
+  router?.push("/dashboard/register");
+}
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
@@ -43,6 +46,7 @@ if(session.status === "loading")
 
 
       <button className={styles.button} onClick={()=>signIn("google")}>Login with Google</button>
+      <button className={styles.button} onClick={()=>register()}>Register</button>
     </div>
   )
 }

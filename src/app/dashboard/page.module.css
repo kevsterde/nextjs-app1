@@ -1,3 +1,14 @@
 .container{
-    background: blue;
+ display: flex;
+ gap: 20px;
+ justify-content: space-between;
+}
+
+
+
+.new{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding:20px;
 }

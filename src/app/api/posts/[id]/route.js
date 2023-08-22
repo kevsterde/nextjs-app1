@@ -18,6 +18,23 @@ try {
     return new NextResponse("Db error",{status:500});
 }
 
-  
+}
+
+
+
+export const DELETE = async (request,{params}) =>{
+    //fetch
+
+const {id} = params
+
+try {
+    await connect()
+
+    await Post.findByIdAndDelete(id);
+
+    return new NextResponse("Post Deleted",{status:200});
+} catch (error) {
+    return new NextResponse("Db error",{status:500});
+}
 
 }
