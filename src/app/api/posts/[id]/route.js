@@ -6,7 +6,11 @@ import {Post} from "@/app/models/Post";
 export const GET = async (request,{params}) =>{
     //fetch
 
-const {id} = params
+    const url = new URL(request.url)
+
+    const id = url.searchParams.get("id");
+
+
 
 try {
     await connect()

@@ -28,10 +28,15 @@ import {notFound} from 'next/navigation'
 //     description: post.desc,
 //   };
 // }
-const  BlogPost = async  ({params}) => {
+const  BlogPost = ({params}) => {
   // const data = await getData(params.id)
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-  const data = {title:'kevin'}
+  const { data, mutate, error, isLoading } = useSWR(
+    `/api/posts?id=${params.id}`, fetcher)
+
+    
+
   return ( 
     <div className={styles.container}>
       <Link className={styles.link} href="/blog">Back</Link>
