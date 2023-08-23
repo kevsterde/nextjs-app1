@@ -17,7 +17,7 @@ const session = useSession();
 // const { data2, mutate, error, isLoading } = useSWR(
 //   `/api/posts/${params.id}`, fetcher)
 const { data2, mutate, error, isLoading } = useSWR(
-  `/api/posts?username=${session?.data?.user.name}`, fetcher)
+  `/api/posts?username=${session?.data2?.user.name}`, fetcher)
 
   console.log(params);
   console.log(params.id);
