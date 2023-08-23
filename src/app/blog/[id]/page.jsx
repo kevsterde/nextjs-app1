@@ -1,18 +1,21 @@
+"use client"
 
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
+import { useParams } from 'next/navigation'
 
 
 const  BlogPost = ({params}) => {
   // const data = await getData(params.id)
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
+  // const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-  const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?id=${params.id}`, fetcher)
-
+  // const { data, mutate, error, isLoading } = useSWR(
+  //   `/api/posts?id=${params.id}`, fetcher)
+const params = useParams();
+  console.log(params);
     
 
   return ( 

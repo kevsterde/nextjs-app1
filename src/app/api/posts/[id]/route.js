@@ -3,7 +3,7 @@ import connect from "@/utils/db";
 import {Post} from "@/app/models/Post";
 
 
-export const GET = async (request,{params}) =>{
+export const GET = async (request) =>{
     //fetch
 
     const url = new URL(request.url)
