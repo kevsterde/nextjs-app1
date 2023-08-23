@@ -26,7 +26,7 @@ import useSWR from 'swr'
 
 
 
-const Blog = async () => {
+const Blog = () => {
   //const data = await getData(); 
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
