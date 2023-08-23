@@ -20,7 +20,7 @@ const  BlogPost = ({params}) => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
 
   const { data, error, isLoading } = useSWR(
-    `/api/posts/${params.id}`, fetcher)
+    `/api/posts/64e4d64af7b0d27c664c992c`, fetcher)
 
  
   return ( 
