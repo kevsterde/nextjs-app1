@@ -12,10 +12,11 @@ const  BlogPost = () => {
   // const data = await getData(params.id)
   // const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-  const { data2, mutate, error, isLoading } = useSWR(
-    `/api/posts?id=${params.id}`, fetcher)
 const params = useParams();
 
+const { data2, mutate, error, isLoading } = useSWR(
+  `/api/posts?id=${params.id}`, fetcher)
+  
   console.log(params);
   console.log(data2);
     const data = {};
