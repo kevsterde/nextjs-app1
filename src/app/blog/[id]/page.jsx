@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {notFound} from 'next/navigation'
 import useSWR from 'swr'
 
-function getData(id) {
+const getData = (id) => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
 
   const { data, error, isLoading } = useSWR(
