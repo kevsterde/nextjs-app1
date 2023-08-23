@@ -14,6 +14,7 @@ const  BlogPost = () => {
 
 const params = useParams();
 const session = useSession();
+console.log(session);
 // const { data2, mutate, error, isLoading } = useSWR(
 //   `/api/posts/${params.id}`, fetcher)
 const { data2, mutate, error, isLoading } = useSWR(
