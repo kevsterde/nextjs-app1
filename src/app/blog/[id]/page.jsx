@@ -10,7 +10,7 @@ import { useParams } from 'next/navigation'
 
 const  BlogPost = () => {
   // const data = await getData(params.id)
-  // const fetcher = (...args) => fetch(...args).then(res => res.json())
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const params = useParams();
 
