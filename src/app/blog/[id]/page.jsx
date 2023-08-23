@@ -4,34 +4,35 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
-import useSWR from 'swr'
 
 
-// export async function generateMetadata({ params }) {
-//   const post = await getData(params.id)
-//   return {
-//     title: post.title,
-//     description: post.desc,
-//   }
-// }
+async function getData(id) {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    cache: "no-store",
+  });
 
-const  BlogPost = ({params}) => {
-  // const data = getData(params.id)
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
+  if (!res.ok) {
+    return notFound()
+  }
 
-  const { data, error, isLoading } = useSWR(
-    `/api/posts/64e4d64af7b0d27c664c992c`, fetcher)
+  return res.json();
+}
 
- 
+
+export async function generateMetadata({ params }) {
+
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+const  BlogPost = async  ({params}) => {
+  const data = await getData(params.id)
+  
   return ( 
 
     <div className={styles.container}>
-    {
-isLoading && <p>Loading</p>
-    }
- {
-error && <p>error</p>
-    }
       <Link className={styles.link} href="/blog">Back</Link>
       <div className={styles.topContainer}>
         <div className={styles.content}>
