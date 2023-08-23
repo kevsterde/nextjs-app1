@@ -9,28 +9,13 @@ import Image from 'next/image'
 import Button from '@/components/Button/Button'
 const Dashboard = () => {
 
-  // const [data,setData] = useState([])
-  // const [error,setError] = useState(false);
-  // const [isLoading,setisLoading] = useState(false);
-// const getData = async () =>{
-
-//   setisLoading(true)
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`,{
-//     cache: 'no-store'
-//   });
- 
-//   if (!res.ok) {
-//     setError(true);
-//   }
-//  const data = await res.json();
-
-//   setData(data)
-//   setisLoading(false);
 
 const session = useSession()
 
 console.log(session);
+
 const fetcher = (...args) => fetch(...args).then(res => res.json())
+
 const { data, mutate, error, isLoading } = useSWR(
   `/api/posts?username=${session?.data?.user.name}`, fetcher)
 
