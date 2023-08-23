@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server"
 import connect from "@/utils/db";
 import {Post} from "@/app/models/Post";
+import { useParams } from "next/navigation";
 
 
 export const GET = async (request) =>{
     //fetch
+    const params = useParams();
 
-    const url = new URL(request.url)
 
-    const id = url.searchParams.get("id");
+
+
+    const id = params.id;
 
 
 
