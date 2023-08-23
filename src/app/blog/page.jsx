@@ -11,9 +11,7 @@ import useSWR from 'swr'
 const Blog = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-
-  const { data, error, isLoading } = useSWR(
-    `/api/posts`, fetcher)
+const { data, error, isLoading } = useSWR( `/api/posts`, fetcher)
 
     
 

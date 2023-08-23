@@ -14,11 +14,11 @@ const  BlogPost = () => {
 
 const params = useParams();
 
-const { data2, mutate, error, isLoading } = useSWR(
-  `/api/posts?id=${params.id}`, fetcher)
-  
+// const { data2, mutate, error, isLoading } = useSWR(
+//   `/api/posts?id=${params.id}`, fetcher)
+
   console.log(params);
-  console.log(data2);
+  console.log(params.id);
     const data = {};
 
   return ( 
