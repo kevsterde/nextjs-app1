@@ -14,7 +14,7 @@ async function getData(id) {
    return notFound()
   }
  
-  return res.json()
+  return res.json();
 }
  
 

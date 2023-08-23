@@ -9,10 +9,10 @@ async function getData() {
   });
  
   if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    throw new Error('Failed to fetch data');
   }
  
-  return res.json()
+  return res.json();
 }
  
 
@@ -27,9 +27,9 @@ const Blog = async () => {
     <div className={styles.container}>
 
     {data.map(item=>(
-     <Link key={item._id} href={"/blog/"+item._id} className={styles.blogItem}>
+     <Link key={item._id} href={`/blog/${item._id}`} className={styles.blogItem}>
      <div className={styles.imgContainer}>
-       <Image src={item.img} fill={true} alt=""/>
+       <Image src={item.img} fill={true} alt="asd"/>
      </div>
      <div className={styles.content}>
        <h1>{item.title}</h1>
