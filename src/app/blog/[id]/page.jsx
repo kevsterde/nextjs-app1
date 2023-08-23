@@ -30,31 +30,11 @@ import {notFound} from 'next/navigation'
 const  BlogPost = async  ({params}) => {
   // const data = await getData(params.id)
 
-  const data = {}
+  // const data = {}
   return ( 
 
     <div className={styles.container}>
-      <Link className={styles.link} href="/blog">Back</Link>
-      <div className={styles.topContainer}>
-        <div className={styles.content}>
-          <h1>{data.title}</h1>
-          <h2>{data.desc}</h2>
-          <div className={styles.author}>
-            <div className={styles.imgContainer}>
-              <Image src={data.img} fill={true} alt="" />
-            </div>
-              <p>{data.username}</p>
-          </div>
-        </div>
-
-        <div className={styles.imgContainer}>
-          <Image src={data.img} fill={true} alt="" />
-        </div>
-      </div>
-
-      <div className={styles.bottomContainer}>
-        <p>{data.content}</p>
-      </div>
+      sample
     </div>
   )
 }
