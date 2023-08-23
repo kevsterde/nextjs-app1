@@ -7,10 +7,6 @@ import {notFound} from 'next/navigation'
 import useSWR from 'swr'
 
 const getData = (id) => {
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-
-  const { data, error, isLoading } = useSWR(
-    `/api/posts${id}`, fetcher)
 
 
 
@@ -31,11 +27,22 @@ const getData = (id) => {
 // }
 
 const  BlogPost = ({params}) => {
-  const data = getData(params.id)
+  // const data = getData(params.id)
+  const fetcher = (...args) => fetch(...args).then(res => res.json())
+
+  const { data, error, isLoading } = useSWR(
+    `/api/posts${id}`, fetcher)
 
  
-  return (
+  return ( 
+
     <div className={styles.container}>
+    {
+isLoading && <p>Loading</p>
+    }
+ {
+error && <p>error</p>
+    }
       <Link className={styles.link} href="/blog">Back</Link>
       <div className={styles.topContainer}>
         <div className={styles.content}>
