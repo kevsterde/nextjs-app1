@@ -6,7 +6,7 @@ import {notFound} from 'next/navigation'
 
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`,{
+  const res = await fetch(`http://localhost:3000/api/posts/64e4d64af7b0d27c664c992c`,{
     cache: 'no-store'
   });
  
