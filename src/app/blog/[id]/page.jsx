@@ -6,10 +6,11 @@ import {notFound} from 'next/navigation'
 
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/64e4d64af7b0d27c664c992c`,{
+  const res = await fetch(`https://beautiful-bombolone-944c3e.netlify.app/api/posts/64e4d64af7b0d27c664c992c`,{
     cache: 'no-store'
   });
- 
+
+
   if (!res.ok) {
    return notFound()
   }
