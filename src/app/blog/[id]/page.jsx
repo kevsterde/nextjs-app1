@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
 import { useParams } from 'next/navigation'
-
+import { useSession } from 'next-auth/react'
 
 const  BlogPost = () => {
   // const data = await getData(params.id)
