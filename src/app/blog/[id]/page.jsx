@@ -8,7 +8,7 @@ import useSWR from 'swr'
 import { useParams } from 'next/navigation'
 
 
-const  BlogPost = ({params}) => {
+const  BlogPost = () => {
   // const data = await getData(params.id)
   // const fetcher = (...args) => fetch(...args).then(res => res.json())
 
