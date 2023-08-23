@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import {notFound} from 'next/navigation'
+
 import useSWR from 'swr'
 
 // async function getData(id) {
