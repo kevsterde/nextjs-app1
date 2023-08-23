@@ -10,13 +10,13 @@ import { useSession } from 'next-auth/react'
 
 const  BlogPost = () => {
   // const data = await getData(params.id)
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-
-const params = useParams();
-const session = useSession();
-console.log(session);
-// const { data2, mutate, error, isLoading } = useSWR(
-//   `/api/posts/${params.id}`, fetcher)
+  
+  const params = useParams();
+  const session = useSession();
+  console.log(session);
+  // const { data2, mutate, error, isLoading } = useSWR(
+    //   `/api/posts/${params.id}`, fetcher)
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
 const { data2, mutate, error, isLoading } = useSWR(
   `/api/posts?username=${session?.data2?.user.name}`, fetcher)
 
