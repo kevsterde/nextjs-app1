@@ -6,17 +6,6 @@ import Link from 'next/link'
 import {notFound} from 'next/navigation'
 import useSWR from 'swr'
 
-const getData = (id) => {
-
-
-
-  if (error) {
-   return notFound()
-  }
- 
-  return data;
-}
- 
 
 // export async function generateMetadata({ params }) {
 //   const post = await getData(params.id)
@@ -31,7 +20,7 @@ const  BlogPost = ({params}) => {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
 
   const { data, error, isLoading } = useSWR(
-    `/api/posts${id}`, fetcher)
+    `/api/posts/${params.id}`, fetcher)
 
  
   return ( 
