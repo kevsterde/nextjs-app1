@@ -1,33 +1,11 @@
 
-"use client"
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import useSWR from 'swr'
 
-// async function getData(id) {
-//   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-//     cache: "no-store",
-//   });
 
-//   if (!res.ok) {
-//     return notFound()
-//   }
-
-//   return res.json();
-// }
-
-
-// export async function generateMetadata({ params }) {
-
-//   const post = await getData(params.id)
-//   return {
-//     title: post.title,
-//     description: post.desc,
-//   };
-// }
 const  BlogPost = ({params}) => {
   // const data = await getData(params.id)
   const fetcher = (...args) => fetch(...args).then(res => res.json())
