@@ -15,8 +15,9 @@ const  BlogPost = () => {
   // const { data, mutate, error, isLoading } = useSWR(
   //   `/api/posts?id=${params.id}`, fetcher)
 const params = useParams();
+
   console.log(params);
-    
+    const data = {};
 
   return ( 
     <div className={styles.container}>
