@@ -4,15 +4,9 @@ import {Post} from "@/app/models/Post";
 import { useParams } from "next/navigation";
 
 
-export const GET = async (request) =>{
+export const GET = async (request,{params}) =>{
     //fetch
-    const params = useParams();
-
-
-
-
-    const id = params.id;
-
+    const { id } = params;
 
 
 try {
