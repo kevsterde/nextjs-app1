@@ -7,4 +7,4 @@ Features:
 - View All your Post in Dashboard
 
 
-SITE URL: https://beautiful-bombolone-944c3e.netlify.app/
+SITE URL: https://nextjs-praktis.netlify.app/
